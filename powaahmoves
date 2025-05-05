@@ -12,17 +12,38 @@
       color: #fff;
       text-align: center;
     }
-    header {
+    /* Hero styles moved from generic header */
+    .hero {
+      /* gradient overlay + background image */
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('assets/logo-header.jpg') center/cover no-repeat;
       padding: 50px 20px;
     }
-    h1 {
+    .hero .logo {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
     }
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
+    .hero .cta a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero .btn {
+      background: #00b894;
+      color: #fff;
+    }
+    .hero .btn-outline {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
     }
     form {
       background: #fff;
@@ -53,12 +74,17 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Powaah Moves</h1>
-    <p>Helping Jamaicans abroad manage Airbnb properties in Jamaica with ease, transparency, and trust.</p>
+
+  <header class="hero">
+    <img src="assets/logo.png" alt="Powaah Moves Logo" class="logo"/>
+    <h1>Hassle-Free Jamaica Property Management</h1>
+    <div class="cta">
+      <a href="#lead-form" class="btn">Get Started</a>
+      <a href="#scheduler" class="btn-outline">Schedule a Call</a>
+    </div>
   </header>
 
-  <form action="https://formspree.io/f/your-form-id" method="POST">
+  <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
     <input type="text" name="name" placeholder="Your Full Name" required>
     <input type="email" name="email" placeholder="Your Email Address" required>
     <textarea name="message" rows="4" placeholder="Tell us about your property or goals" required></textarea>
@@ -66,6 +92,15 @@
   </form>
 
   <footer>
+    &copy; 2025 Powaah Moves • Proudly helping property owners invest in Jamaica 🇯🇲
+  </footer>
+  
+  <!-- include your JS (for form handling / scheduler) -->
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
     &copy; 2025 Powaah Moves • Proudly helping property owners invest in Jamaica 🇯🇲
   </footer>
 </body>
