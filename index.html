@@ -1,103 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Powaah Moves | Airbnb Property Management in Jamaica</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Powaah Moves - Hassle-Free Jamaica Property Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to bottom right, #00b894, #55efc4);
-      margin: 0;
-      color: #fff;
-      text-align: center;
+    :root {
+      --blue: #007bff; /* electric blue */
+      --yellow: #ffd700; /* bright yellow */
+      --white: #ffffff;
+      --dark: #0a0a0a;
+      --radius: 8px;
+      --font: 'Inter', sans-serif;
     }
-    /* Hero styles moved from generic header */
-    .hero {
-      /* gradient overlay + background image */
-      background:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('assets/logo-header.jpg') center/cover no-repeat;
-      padding: 50px 20px;
-    }
-    .hero .logo {
-      width: 150px;
-      margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .hero .cta a {
-      display: inline-block;
-      margin: 0.5rem 1rem;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero .btn {
-      background: #00b894;
-      color: #fff;
-    }
-    .hero .btn-outline {
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-    form {
-      background: #fff;
-      color: #000;
-      padding: 20px;
-      margin: 30px auto;
-      max-width: 400px;
-      border-radius: 10px;
-    }
-    input, textarea, button {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #00b894;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    footer {
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: var(--font); background: var(--white); color: var(--dark); line-height: 1.6; }
+    header { background: var(--blue); color: var(--white); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 40px; margin-right: 0.5rem; }
+    nav button { background: var(--yellow); color: var(--dark); border: none; padding: 0.5rem 1rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; margin-left: 1rem; }
+    nav button:hover { opacity: 0.9; }
+    main { text-align: center; padding: 4rem 2rem; background: #f5fdfc; }
+    main h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    main p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .buttons { display: inline-flex; gap: 1rem; }
+    .buttons .btn-primary, .buttons .btn-secondary { padding: 0.75rem 1.5rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; border: none; }
+    .btn-primary { background: var(--yellow); color: var(--dark); }
+    .btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn-primary:hover, .btn-secondary:hover { opacity: 0.9; }
+    #contact { background: var(--blue); padding: 3rem 2rem; color: var(--white); }
+    #contact form { max-width: 500px; margin: 0 auto; display: grid; gap: 1rem; }
+    #contact input, #contact textarea { width: 100%; padding: 0.75rem; border: none; border-radius: var(--radius); }
+    #contact button { background: var(--yellow); color: var(--dark); padding: 0.75rem; border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer; }
+    footer { text-align: center; padding: 1rem; font-size: 0.9rem; }
   </style>
+  <!-- Calendly inline widget script -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
-
-  <header class="hero">
-    <img src="assets/logo.png" alt="Powaah Moves Logo" class="logo"/>
-    <h1>Hassle-Free Jamaica Property Management</h1>
-    <div class="cta">
-      <a href="#lead-form" class="btn">Get Started</a>
-      <a href="#scheduler" class="btn-outline">Schedule a Call</a>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Powaah Moves Logo" />
+      <h1>Powaah Moves</h1>
     </div>
+    <nav>
+      <button id="btn-start">Get Started</button>
+      <button id="btn-schedule">Schedule a Call</button>
+    </nav>
   </header>
 
-  <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="Your Full Name" required>
-    <input type="email" name="email" placeholder="Your Email Address" required>
-    <textarea name="message" rows="4" placeholder="Tell us about your property or goals" required></textarea>
-    <button type="submit">Contact Us</button>
-  </form>
+  <main>
+    <h1>Hassle-Free Jamaica Property Management</h1>
+    <p>Let us handle the details while you enjoy stress-free hosting and optimal returns on your Jamaica property investment.</p>
+    <div class="buttons">
+      <button class="btn-primary" id="btn-start-main">Get Started</button>
+      <button class="btn-secondary" id="btn-schedule-main">Schedule a Call</button>
+    </div>
+  </main>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Full Name" required />
+      <input type="email" placeholder="Your Email Address" required />
+      <textarea rows="5" placeholder="Tell us about your property or goals"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 Powaah Moves • Proudly helping property owners invest in Jamaica 🇯🇲
+    © 2025 Powaah Moves • Proudly helping property owners invest in Jamaica 🇯🇲
   </footer>
-  
-  <!-- include your JS (for form handling / scheduler) -->
-  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-  <script src="js/main.js"></script>
+
+  <script>
+    // Smooth scroll to contact
+    function scrollToContact() {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+    // Event listeners
+    document.querySelectorAll('#btn-start, #btn-start-main').forEach(btn => {
+      btn.addEventListener('click', scrollToContact);
+    });
+    document.querySelectorAll('#btn-schedule, #btn-schedule-main').forEach(btn => {
+      btn.addEventListener('click', () => {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/YOUR_CALENDLY_LINK' });
+      });
+    });
+  </script>
 </body>
 </html>
 
