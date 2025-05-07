@@ -16,7 +16,7 @@
     }
     * { box-sizing: border-box; margin:0; padding:0; }
     body { font-family: var(--font); background: var(--white); color: var(--dark); line-height: 1.6; }
-    header { background: var(--blue); color: var(--white); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    header { background: var(--blue); color: var(--white); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
     .logo { display: flex; align-items: center; }
     .logo img { height: 40px; margin-right: 0.5rem; }
     nav button { background: var(--yellow); color: var(--dark); border: none; padding: 0.5rem 1rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; margin-left: 1rem; }
@@ -29,15 +29,16 @@
     .btn-primary { background: var(--yellow); color: var(--dark); }
     .btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); }
     .btn-primary:hover, .btn-secondary:hover { opacity: 0.9; }
+    #schedule { padding: 3rem 2rem; background: #fff; }
+    #schedule h2 { text-align: center; margin-bottom: 1rem; }
+    #schedule iframe { width: 100%; max-width: 800px; height: 600px; border: none; margin: 0 auto; display: block; border-radius: var(--radius); }
     #contact { background: var(--blue); padding: 3rem 2rem; color: var(--white); }
+    #contact h2 { text-align: center; margin-bottom: 1rem; }
     #contact form { max-width: 500px; margin: 0 auto; display: grid; gap: 1rem; }
     #contact input, #contact textarea { width: 100%; padding: 0.75rem; border: none; border-radius: var(--radius); }
     #contact button { background: var(--yellow); color: var(--dark); padding: 0.75rem; border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer; }
-    footer { text-align: center; padding: 1rem; font-size: 0.9rem; }
+    footer { text-align: center; padding: 1rem; font-size: 0.9rem; background: #f9f9f9; }
   </style>
-  <!-- Calendly inline widget script -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
   <header>
@@ -60,11 +61,17 @@
     </div>
   </main>
 
+  <section id="schedule">
+    <h2>Book an Appointment</h2>
+   <!-- Google Calendar embed using meshachcbrown@gmail.com -->
+<iframe src="https://calendar.google.com/calendar/embed?src=meshachcbrown@gmail.com&ctz=America%2FNew_York" scrolling="no"></iframe>
+</section>
+  
   <section id="contact">
     <h2>Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Full Name" required />
-      <input type="email" placeholder="Your Email Address" required />
+     <input type="email" placeholder="Your Email Address" required />
       <textarea rows="5" placeholder="Tell us about your property or goals"></textarea>
       <button type="submit">Submit</button>
     </form>
@@ -75,24 +82,17 @@
   </footer>
 
   <script>
-    // Smooth scroll to contact
-    function scrollToContact() {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    // Scroll to sections smoothly
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
     // Event listeners
     document.querySelectorAll('#btn-start, #btn-start-main').forEach(btn => {
-      btn.addEventListener('click', scrollToContact);
+      btn.addEventListener('click', () => scrollToSection('contact'));
     });
     document.querySelectorAll('#btn-schedule, #btn-schedule-main').forEach(btn => {
-      btn.addEventListener('click', () => {
-        Calendly.initPopupWidget({ url: 'https://calendly.com/YOUR_CALENDLY_LINK' });
-      });
+      btn.addEventListener('click', () => scrollToSection('schedule'));
     });
   </script>
-</body>
-</html>
-
-    &copy; 2025 Powaah Moves • Proudly helping property owners invest in Jamaica 🇯🇲
-  </footer>
 </body>
 </html>
