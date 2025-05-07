@@ -2,70 +2,153 @@
   --primary: #BADC58;
   --secondary: #FF6F61;
   --accent: #2E8B57;
+  --navy: #0b2342;
+  --gold: #ffd700;
+  --white: #ffffff;
+  --dark: #333333;
+  --radius: 6px;
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: #333;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
 }
 
-.hero {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  text-align: center;
-  color: white;
-  padding: 4rem 1rem;
+/* Header */
+header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-
 .logo {
-  width: 150px;
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }
-
-.btn {
-  background: var(--accent);
-  color: white;
-  padding: 0.75rem 1.5rem;
+.logo img {
+  height: 40px;
+  margin-right: .75rem;
+}
+nav button {
+  background: var(--gold);
+  color: var(--navy);
   border: none;
-  border-radius: 4px;
-  text-decoration: none;
+  padding: .5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+nav button:hover {
+  opacity: .9;
 }
 
-.btn-outline {
-  color: white;
-  border: 2px solid white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
+/* Hero/Main Section with background image */
+main {
+  position: relative;
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 2rem;
 }
-
-.form-section,
-.scheduler-section {
-  padding: 3rem 1rem;
-  max-width: 600px;
-  margin: auto;
-}
-
-.form-section input,
-.form-section select,
-.form-section textarea {
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
-  padding: 0.75rem;
+  background: rgba(11, 35, 66, 0.5); /* dark navy overlay for readability */
+  z-index: 0;
+}
+main h1,
+main p,
+main button {
+  position: relative;
+  z-index: 1;
+}
+main h1 {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+}
+main p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
 }
 
-.footer {
+/* Call to Action Button */
+.btn-schedule {
+  background: var(--gold);
+  color: var(--navy);
+  padding: .75rem 2rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-schedule:hover {
+  opacity: .9;
+}
+
+/* Schedule Section */
+#schedule {
+  padding: 4rem 1rem;
+  background: var(--white);
+  text-align: center;
+}
+#schedule h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+#schedule iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 820px;
+  border: none;
+  border-radius: var(--radius);
+}
+
+/* Footer */
+footer {
   text-align: center;
   padding: 1rem;
-  background: #f8f8f8;
+  font-size: .9rem;
+  background: #f1f1f1;
+  color: var(--dark);
 }
 
-@media (min-width: 768px) {
-  .cta a {
-    margin: 0 1rem;
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    height: auto;
+    padding: 3rem 1.5rem;
+  }
+  main h1 {
+    font-size: 2rem;
+  }
+  main p {
+    font-size: 1rem;
   }
 }
