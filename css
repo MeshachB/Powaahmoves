@@ -61,7 +61,7 @@ nav button:hover {
 /* Hero/Main Section with background image */
 main {
   position: relative;
- background: url('images/hero-bg.jpg') center/cover no-repeat;
+ background: url('hero-bg.jpg') center/cover no-repeat;
   height: 60vh;
   display: flex;
   align-items: center;
