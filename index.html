@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Powaah Moves - Hassle-Free Jamaica Property Management</title>
+  <title>Powaah Moves - Trustworthy Jamaica Property Management</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -32,11 +32,6 @@
     #schedule { padding: 3rem 2rem; background: #fff; }
     #schedule h2 { text-align: center; margin-bottom: 1rem; }
     #schedule iframe { width: 100%; max-width: 800px; height: 600px; border: none; margin: 0 auto; display: block; border-radius: var(--radius); }
-    #contact { background: var(--blue); padding: 3rem 2rem; color: var(--white); }
-    #contact h2 { text-align: center; margin-bottom: 1rem; }
-    #contact form { max-width: 500px; margin: 0 auto; display: grid; gap: 1rem; }
-    #contact input, #contact textarea { width: 100%; padding: 0.75rem; border: none; border-radius: var(--radius); }
-    #contact button { background: var(--yellow); color: var(--dark); padding: 0.75rem; border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer; }
     footer { text-align: center; padding: 1rem; font-size: 0.9rem; background: #f9f9f9; }
   </style>
 </head>
@@ -53,7 +48,7 @@
   </header>
 
   <main>
-    <h1>Hassle-Free Jamaica Property Management</h1>
+    <h1>Trustworthy Jamaica Property Management</h1>
     <p>Let us handle the details while you enjoy stress-free hosting and optimal returns on your Jamaica property investment.</p>
     <div class="buttons">
       <button class="btn-primary" id="btn-start-main">Get Started</button>
@@ -63,18 +58,8 @@
 
   <section id="schedule">
     <h2>Book an Appointment</h2>
-   <!-- Google Calendar embed using meshachcbrown@gmail.com -->
-<iframe src="https://calendar.google.com/calendar/embed?src=meshachcbrown@gmail.com&ctz=America%2FNew_York" scrolling="no"></iframe>
-</section>
-  
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Full Name" required />
-     <input type="email" placeholder="Your Email Address" required />
-      <textarea rows="5" placeholder="Tell us about your property or goals"></textarea>
-      <button type="submit">Submit</button>
-    </form>
+    <!-- Google Forms embed link -->
+    <iframe src="https://docs.google.com/forms/d/1XddMzHUIYeJ6WITghaO8X1f_6g-oWpTDoGAVpVBluPA/viewform?embedded=true" width="640" height="820" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </section>
 
   <footer>
@@ -88,7 +73,7 @@
     }
     // Event listeners
     document.querySelectorAll('#btn-start, #btn-start-main').forEach(btn => {
-      btn.addEventListener('click', () => scrollToSection('contact'));
+      btn.addEventListener('click', () => scrollToSection('schedule'));
     });
     document.querySelectorAll('#btn-schedule, #btn-schedule-main').forEach(btn => {
       btn.addEventListener('click', () => scrollToSection('schedule'));
@@ -96,3 +81,5 @@
   </script>
 </body>
 </html>
+
+
